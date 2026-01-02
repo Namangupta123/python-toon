@@ -1,0 +1,7 @@
+# environment files
+__pycache__/
+.vscode
+.venv
+
+# Testing files
+t1.py

@@ -14,7 +14,7 @@ def test_encode_with_hypothesis(data):
 		assert isinstance(e, (ToonEncodingError, CircularReferenceError, DatasetTooLargeError))
 		
 
-from src import ToonEncodingError, CircularReferenceError, DatasetTooLargeError
+from src.Python_Toon import ToonEncodingError, CircularReferenceError, DatasetTooLargeError
 
 def test_encode_circular_reference():
 	a = {}
@@ -28,7 +28,7 @@ def test_encode_dataset_too_large(monkeypatch):
 	with pytest.raises(DatasetTooLargeError):
 		encode({"a": 1})
 		
-from src import EncodeOptions, Delimiter
+from src.Python_Toon import EncodeOptions, Delimiter
 
 def test_encode_with_indent():
 	data = {"x": 1, "y": [1, 2]}

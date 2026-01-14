@@ -5,7 +5,7 @@ Primitive data types and related utilities.
 from .types import jsonPrimitive
 
 class PrimitiveUtils:
-    def __init (self):
+    def __init__ (self):
         self.escape_sequences = {'\\', '"', '\n', '\r', '\t', '\b', '\f'}
 
     def encode_primitive(self, value: jsonPrimitive, delimiter: str) -> str:
@@ -28,28 +28,29 @@ class PrimitiveUtils:
         return value
  
     def _escape_string(self, value: str) -> str:
-        result=[]
+        """Escape special characters in string."""
+        result = []
         for char in value:
-            if char in self.escape_sequences:
-                if char == '\\':
-                    result.append('\\\\')
-                elif char == '"':
-                    result.append('\\"')
-                elif char == '\n':
-                    result.append('\\n')
-                elif char == '\r':
-                    result.append('\\r')
-                elif char == '\t':
-                    result.append('\\t')
-                elif char == '\b':
-                    result.append('\\b')
-                elif char == '\f':
-                    result.append('\\f')
+            if char == '\\':
+                result.append('\\\\')
+            elif char == '"':
+                result.append('\\"')
+            elif char == '\n':
+                result.append('\\n')
+            elif char == '\r':
+                result.append('\\r')
+            elif char == '\t':
+                result.append('\\t')
+            elif char == '\b':
+                result.append('\\b')
+            elif char == '\f':
+                result.append('\\f')
             else:
                 result.append(char)
-        
+            
         return ''.join(result)
-    
+
+
     def _need_quotes(self, value: str, delimiter: str) -> bool:
         if not value:
             return True

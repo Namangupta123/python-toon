@@ -44,7 +44,7 @@ def test_encode_with_pipe_delimiter():
 	assert "|" in result
 
 import pytest
-from src import encode
+from src.Python_Toon import encode
 
 def test_encode_simple_dict():
 	data = {"a": 1, "b": 2}

@@ -2,6 +2,12 @@
 __pycache__/
 .vscode
 .venv
+.hypothesis/
+.pytest_cache/
 
 # Testing files
 t1.py
+
+# Distribution / packaging
+dist/
+src/json_toon_fmt.egg-info
